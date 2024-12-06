@@ -1,0 +1,267 @@
+:root {
+    --bg-dark: #121212;
+    --text-primary: #e0e0e0;
+    --accent-color: #4CAF50;
+    --border-color: #2c2c2c;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--bg-dark);
+    color: var(--text-primary);
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 20px;
+    /* padding: 10px; */
+    background-color: rgba(76, 175, 80, 0.1);
+    border-radius: 8px;
+}
+
+.main-content {
+    display: flex;
+    /* gap: 20px; */
+    flex-grow: 1;
+}
+
+.camera-tile, .log-tile {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    /* gap: 20px; */
+}
+
+.log-report {
+    background-color: rgba(255, 215, 0, 0.2); /* Highlighted in yellow */
+    font-weight: bold;
+    border: 1px solid #ffd700;
+    padding: 10px;
+    border-radius: 5px;
+  }
+  
+
+.video-container {
+    position: relative;
+    flex-grow: 2; /* Increase this to make the video container larger */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%; /* Ensure it uses the full available width */
+    height: 80vh; /* Set the height to a larger proportion of the viewport */
+}
+
+#video, #canvas {
+    max-width: 100%;
+    max-height: 100%;
+    width: 80%; /* Ensure it scales properly */
+    height: auto; /* Adjust height proportionally */
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.log-tile {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.insights-panel{
+    width: 800px;
+}
+
+#emotion-summary {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    background-color: rgba(255, 255, 255, 0.05);
+    padding: 15px;
+    border-radius: 8px;
+  
+}
+
+.emotion-card {
+    background-color: rgba(76, 175, 80, 0.1);
+    border-radius: 5px;
+    padding: 10px;
+    text-align: center;
+    transition: transform 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+}
+
+.emotion-card .emoji {
+    font-size: 2rem;
+    margin-bottom: 5px;
+}
+
+.terminal-log {
+    background-color: #1e1e1e;
+    border-radius: 8px;
+    padding: 15px;
+    
+    margin: 20px 0px;
+
+    overflow-y: auto;
+    max-height: 250px; /* Set a maximum height for the log area */
+    font-family: 'Fira Code', monospace;
+}
+
+#controls {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 15px;
+}
+
+.control-btn {
+    padding: 10px 20px;
+    font-size: 1rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+#start-btn {
+    background-color: var(--accent-color);
+    color: var(--bg-dark);
+}
+
+#stop-btn {
+    background-color: #e0e0e0;
+    color: var(--bg-dark);
+}
+
+.control-btn:hover {
+    transform: translateY(-2px);
+}
+
+.control-btn:active {
+    transform: translateY(1px);
+}
+#controls {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 15px;
+}
+
+.control-btn {
+    padding: 10px 20px;
+    font-size: 1rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+#start-btn {
+    background-color: var(--accent-color);
+    color: var(--bg-dark);
+}
+
+#stop-btn {
+    background-color: #e0e0e0;
+    color: var(--bg-dark);
+}
+
+.control-btn:hover {
+    transform: translateY(-2px);
+}
+
+.control-btn:active {
+    transform: translateY(1px);
+}
+
+.age-card {
+    background-color: rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    padding: 10px;
+    text-align: center;
+    margin-top: 10px;
+  }
+  
+  .age-info, .gender-info {
+    font-size: 1.2rem;
+    margin: 5px 0;
+  }
+  
+
+.status-bar {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    background-color: rgba(76, 175, 80, 0.1);
+    border-radius: 8px;
+    margin-top: 20px;
+}
+
+/* General Log Styles */
+.log-message {
+    padding: 10px;
+    margin-bottom: 5px;
+    border-radius: 5px;
+    font-size: 0.9rem;
+    color: #e0e0e0; /* Default text color */
+    transition: background-color 0.3s ease;
+  }
+  
+  /* Odd Logs */
+  .odd-log {
+    background-color: #2a2a2a; /* Dark background for odd logs */
+  }
+  
+  /* Even Logs */
+  .even-log {
+    background-color: rgba(76, 175, 80, 0.1); /* Light green for even logs */
+    border: 1px solid rgba(76, 175, 80, 0.3); /* Subtle border for even logs */
+  }
+  
+  /* Style for Report Logs */
+  .log-report {
+    background-color: rgba(255, 215, 0, 0.2); /* Highlighted yellow background */
+    font-weight: bold;
+    border: 1px solid #ffd700;
+    padding: 10px;
+    border-radius: 5px;
+  }
+  
+  /* Style for Warning Logs */
+  .log-warning {
+    background-color: rgba(255, 69, 58, 0.2); /* Light red */
+    color: #ff453a;
+  }
+  
+  /* Style for Error Logs */
+  .log-error {
+    background-color: rgba(255, 0, 0, 0.1); /* Subtle red background */
+    color: #ff0000;
+  }
+  
+
+@media (max-width: 768px) {
+    .main-content {
+        flex-direction: column;
+    }
+}

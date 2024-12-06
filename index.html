@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emotion Insights</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- <script src="https://cdn.jsdelivr.net/npm/@vladmandic/face-api/dist/face-api.min.js"></script> -->
+    <script src="main.js"></script>
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Emotion Analysis Dashboard</h1>
+        </header>
+        
+        <main class="main-content">
+            <div class="video-container">
+                <!-- Hide the video element -->
+                <video id="video" autoplay muted playsinline style="display:none;"></video>
+                <canvas id="canvas"></canvas>
+            </div>
+            
+            <div class="insights-panel">
+                <div id="emotion-summary" class="summary-grid"></div>
+                <div id="log" class="terminal-log"></div>
+                <div id="controls">
+                  <button id="start-btn" class="control-btn">Start</button>
+                  <button id="stop-btn" class="control-btn">Stop</button>
+                  <button id="clear-logs-btn" class="control-btn">Clear Logs</button>
+                </div>
+                
+                <div id="age-summary" class="summary-grid"></div>
+              
+            </div>
+        </main>
+        
+        <footer>
+            <div class="status-bar">
+                <span id="face-count">Faces Detected: 0</span>
+                <span id="model-status">Loading Models...</span>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>
